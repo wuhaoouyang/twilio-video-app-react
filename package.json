@@ -49,14 +49,6 @@
     "typescript": "^4.6.2"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.5.10",
-    "@storybook/addon-essentials": "^6.5.10",
-    "@storybook/addon-links": "^6.5.10",
-    "@storybook/builder-webpack5": "^6.5.10",
-    "@storybook/manager-webpack5": "^6.5.10",
-    "@storybook/node-logger": "^6.5.10",
-    "@storybook/preset-create-react-app": "^4.1.2",
-    "@storybook/react": "^6.5.10",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/react-hooks": "^3.2.1",
@@ -88,7 +80,7 @@
     "postinstall": "rimraf public/virtualbackground && copyfiles -f node_modules/@twilio/video-processors/dist/build/* public/virtualbackground",
     "noisecancellation:krisp": "npm install @twilio/krisp-audio-plugin && rimraf public/noisecancellation && copyfiles -f \"node_modules/@twilio/krisp-audio-plugin/dist/*\" public/noisecancellation && copyfiles -f \"node_modules/@twilio/krisp-audio-plugin/dist/weights/*\" public/noisecancellation/weights",
     "start": "concurrently npm:server npm:dev",
-    "dev": "react-scripts start",
+    "dev": "PORT=3001 react-scripts start",
     "build": "node ./scripts/build.js",
     "gcp-build": "",
     "test": "cross-env TZ=utc jest --config jest.config.js",

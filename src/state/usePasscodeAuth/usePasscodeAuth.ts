@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-const endpoint = process.env.REACT_APP_TOKEN_ENDPOINT || '/token';
+const endpoint = process.env.REACT_APP_TOKEN_ENDPOINT || '';
 
 export function getPasscode() {
   const match = window.location.search.match(/passcode=(.*)&?/);
@@ -16,7 +16,7 @@ export function fetchToken(
   create_room = true,
   create_conversation = process.env.REACT_APP_DISABLE_TWILIO_CONVERSATIONS !== 'true'
 ) {
-  return fetch(endpoint, {
+  return fetch(endpoint + '/token', {
     method: 'POST',
     headers: {
       'content-type': 'application/json',

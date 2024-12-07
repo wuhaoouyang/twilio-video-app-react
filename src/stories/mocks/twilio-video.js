@@ -1,4 +1,4 @@
-import { action } from '@storybook/addon-actions';
+// import { action } from '@storybook/addon-actions';
 import EventEmitter from 'events';
 
 Object.defineProperty(navigator, 'permissions', { value: false });
